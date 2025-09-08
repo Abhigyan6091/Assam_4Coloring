@@ -1,11 +1,12 @@
-# Assam_4Coloring
+# Map Coloring of Assam Districts using Backtracking CSP
 
-Map Coloring of Assam Districts using Backtracking CSP
+
 This project provides a Python-based solution to the Map Coloring Constraint Satisfaction Problem (CSP) applied to the districts of Assam, a state in Northeast India. It implements and compares three different backtracking algorithms to find a valid coloring for the map, where no two adjacent districts share the same color.
 
 The primary goal is to demonstrate the efficiency gains from using intelligent heuristics (MRV & LCV) and constraint propagation (AC-3) over a naive backtracking approach.
 
-Algorithms Implemented
+# Algorithms Implemented:
+
 This repository showcases three distinct methods for solving the CSP:
 
 Plain Backtracking: The simplest form of the algorithm. It iterates through districts and colors in a fixed order, which is often highly inefficient.
@@ -18,7 +19,7 @@ Least Constraining Value (LCV): Chooses the color that leaves the most options a
 
 Backtracking with AC-3 & Heuristics: The most advanced method. It incorporates the AC-3 algorithm for arc consistency. This form of constraint propagation "looks ahead" to eliminate color choices that will inevitably lead to a failure, drastically pruning the search space.
 
-Analysis: Why 3-Coloring is Impossible for this Map
+# Analysis: Why 3-Coloring is Impossible for this Map
 A key finding of this project is that the map of Assam's districts cannot be colored with only three colors. The algorithms correctly prove this by exhaustively searching the solution space and returning None.
 
 The reason for this failure lies in the geographical topology of the districts. For a map to be 3-colorable, it cannot contain any "cliques" of four or more regions that are all mutually adjacent. The Assam map contains several such arrangements.
@@ -58,7 +59,7 @@ But this creates a conflict! Both Chirang and Goalpara are Blue, but they are no
 
 The backtracking algorithms discover these impossible situations automatically. The AC-3 algorithm is particularly effective at this, as it can detect such inconsistencies early without deep searching.
 
-4-Coloring: A Successful Solution
+# 4-Coloring: A Successful Solution
 By increasing the number of available colors to four (['Red', 'Green', 'Blue', 'Yellow']), in line with the Four Color Theorem, the algorithms find a valid solution effortlessly. Because the problem becomes less constrained, even the naive backtracking algorithm can find a solution without having to backtrack.
 
-This project successfully demonstrates the application of classic AI algorithms to a real-world geographical problem and highlights how the problem's constraints dictate the solvability and the efficiency of the solution path. 🗺️✨
+This project successfully demonstrates the application of classic AI algorithms to a real-world geographical problem and highlights how the problem's constraints dictate the solvability and the efficiency of the solution path. 
